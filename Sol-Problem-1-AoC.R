@@ -15,9 +15,16 @@
         ##sum/tidyverse function to apply summation
         ##order/max function to find greatest calories/elf
       
-        ##try a split on na omit
-        elves <- split(elf, na.omit(elf))
+        
         ##get #position o f nas as vector
         na_elf <- which(is.na(elf))
         
-        na_elves <-split(elf, !na_elf)
+        ##rubbish
+        x <- split(elf, na_elf)
+        
+        ##need to extract to different vectors/tibbles
+        
+        is.na(elf)
+        
+        elf2 <- ifelse(is.na(elf), print(0) , elf)        ##ifelse(yc != 0, log10(yc), yc)
+        elf2 <- ifelse(is.na(elf), 0, elf)
