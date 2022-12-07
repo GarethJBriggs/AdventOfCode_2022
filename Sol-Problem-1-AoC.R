@@ -9,22 +9,33 @@
         ##check nas
         table(is.na(elf))
         ##coerce to tibble
-        elf <- as.tibble(elf)
+        elf <- as_tibble(elf)
         
-        ##looping/split function to group into smaller sets
-        ##sum/tidyverse function to apply summation
-        ##order/max function to find greatest calories/elf
+        ##looping/split function to group into smaller sets?
+        ##sum/tidyverse function to apply summation?
+        ##order/max function to find greatest calories/elf?
       
         
-        ##get #position o f nas as vector
-        na_elf <- which(is.na(elf))
+        ##get #position of NAs as vector?
         
-        ##rubbish
+        ##rubbish code FAIL
         x <- split(elf, na_elf)
         
-        ##need to extract to different vectors/tibbles
+        ##need to extract to different vectors/tibbles/lists
         
-        is.na(elf)
+        ##ifelse? FAIL                                      ##old EDM code: (yc != 0, log10(yc), yc)
         
-        elf2 <- ifelse(is.na(elf), print(0) , elf)        ##ifelse(yc != 0, log10(yc), yc)
+        elf2 <- ifelse(is.na(elf), print(0) , elf)        
         elf2 <- ifelse(is.na(elf), 0, elf)
+        
+        ##summation of all 2000 non-NA obs WORKS
+        non_nan_elf <- sum(elf, na.rm = TRUE)
+        
+        ##Basic attempt at for if/else statements to put into a for loop NEEDS WORK, PsyR               
+        goblin <-if(elf[, ] == "NA"){
+                        print ("goblin")
+        }
+        
+        ## subset to remove nas WORKS
+        sub_elf <- (elf[!is.na(elf$elf_cal), ])
+        
