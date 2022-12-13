@@ -15,27 +15,34 @@
         ##sum/tidyverse function to apply summation?
         ##order/max function to find greatest calories/elf?
       
-        
         ##get #position of NAs as vector?
         
-        ##rubbish code FAIL
-        x <- split(elf, na_elf)
-        
+        ##generates single list 2000 obs list, plus omitted NA list WORKS
+        x <- lapply(elf, na.omit)
+
         ##need to extract to different vectors/tibbles/lists
         
-        ##ifelse? FAIL                                      ##old EDM code: (yc != 0, log10(yc), yc)
+        ##ifelse                                     
         
-        elf2 <- ifelse(is.na(elf), print(0) , elf)        
-        elf2 <- ifelse(is.na(elf), 0, elf)
+        ## Both elf2 and elf 2 giveLarge list of each obs as a list with only NA
+        ##obs excluded from recursion
+        elf2 <- ifelse(!is.na(elf), elf, 0)        
+        elf3 <- ifelse(is.na(elf), 0, elf)
         
-        ##summation of all 2000 non-NA obs WORKS
-        non_nan_elf <- sum(elf, na.rm = TRUE)
-        
-        ##Basic attempt at for if/else statements to put into a for loop NEEDS WORK, PsyR               
-        goblin <-if(elf[, ] == "NA"){
-                        print ("goblin")
-        }
-        
+        ##sum all 2000 non-NA obs WORKS
+        y <- no_na_elf <- sum(elf, na.rm = TRUE)
+       
         ## subset to remove nas WORKS
         sub_elf <- (elf[!is.na(elf$elf_cal), ])
         
+        ##lapply
+        x <- lapply(!is.na(elf))
+        x <- lapply(elf, )
+         
+        ## Single list of all obs in 1 list
+        z <- as.list(elf)
+        
+        ##Basic attempt at for if/else statements to put into a for loop NEEDS WORK, PsyR               
+        goblin <-if(elf[, ] == "NA"){
+                print ("goblin")
+        } 
